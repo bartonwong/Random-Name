@@ -17,14 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     
     @IBAction func random(_ sender: UIButton) {
-        var random = uint(counter)
-        var randomPosition = arc4random_uniform(random)
+        if counter > 0{
+            let random = uint(counter)
+            let randomPosition = arc4random_uniform(random)
+            
+            let alertController = UIAlertController(title: "iOScreator", message:
+                name[Int(randomPosition)], preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Randm Name", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
         
-        let alertController = UIAlertController(title: "iOScreator", message:
-            name[Int(randomPosition)], preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Randm Name", style: UIAlertActionStyle.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
         
     }
     
@@ -37,10 +40,10 @@ class ViewController: UIViewController {
     
     @IBAction func addName(_ sender: UIButton) {
         if (nameField.text != ""){
-            nameList = nameList + nameField.text! + "/n"
+            nameList = nameList + nameField.text! + "\n"
             name.append(nameField.text!)
             counter = counter + 1
-            nameField.text = nameList
+            nameView.text = nameList
         }
         
     }
