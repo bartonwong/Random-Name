@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var counter = 0
     var name = [String]()
     
+    @IBOutlet weak var titleName: UILabel!
     @IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameField: UITextField!
     
@@ -20,12 +21,12 @@ class ViewController: UIViewController {
         if counter > 0{
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
-            
-            let alertController = UIAlertController(title: "iOScreator", message:
+            titleName.text = name[Int(randomPosition)]
+            /*let alertController = UIAlertController(title: "Random Name", message:
                 name[Int(randomPosition)], preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Randm Name", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
             
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)*/
         }
         
         
@@ -33,9 +34,10 @@ class ViewController: UIViewController {
     
     @IBAction func reset(_ sender: UIButton) {
         nameList = ""
-        nameField.text = nameList
+        nameView.text = nameList
         counter = 0
         name.removeAll()
+        titleName.text = "Random Name"
     }
     
     @IBAction func addName(_ sender: UIButton) {
@@ -44,6 +46,7 @@ class ViewController: UIViewController {
             name.append(nameField.text!)
             counter = counter + 1
             nameView.text = nameList
+            nameField.text = ""
         }
         
     }
