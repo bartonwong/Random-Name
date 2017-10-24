@@ -17,8 +17,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameField: UITextField!
     
+    @IBAction func removeName(_ sender: UIButton) {
+        if (nameField.text != ""){
+            if let index = name.index(of: nameField.text!){
+                name.remove(at: index)
+                nameList = ""
+                for word in name {
+                    nameList = nameList + word + "\n"
+                }
+                nameView.text = nameList
+            }
+        }
+    }
     @IBAction func random(_ sender: UIButton) {
-        if counter > 0{
+        if counter > 0 {
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
             titleName.text = name[Int(randomPosition)]
