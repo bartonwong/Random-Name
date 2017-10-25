@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var name = [String]()
     
     @IBOutlet weak var titleName: UILabel!
-    //@IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameField: UITextField!
     
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
                 nameView.text = nameList
                 nameField.text = ""
                 counter = counter - 1
+                nameField.endEditing(true)
             }
         }
     }
@@ -37,6 +37,7 @@ class ViewController: UIViewController {
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
             titleName.text = name[Int(randomPosition)]
+            nameField.endEditing(true)
         }
         
         
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
         name.removeAll()
         nameField.text = ""
         titleName.text = "Random Name"
+        nameField.endEditing(true)
     }
     
     @IBAction func addName(_ sender: UIButton) {
@@ -62,6 +64,7 @@ class ViewController: UIViewController {
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
