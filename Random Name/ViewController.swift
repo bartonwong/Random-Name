@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var name = [String]()
     
     @IBOutlet weak var titleName: UILabel!
+    //@IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameField: UITextField!
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
                     nameList = nameList + word + "\n"
                 }
                 nameView.text = nameList
+                nameField.text = ""
                 counter = counter - 1
             }
         }
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         nameView.text = nameList
         counter = 0
         name.removeAll()
+        nameField.text = ""
         titleName.text = "Random Name"
     }
     
@@ -55,6 +58,7 @@ class ViewController: UIViewController {
             counter = counter + 1
             nameView.text = nameList
             nameField.text = ""
+            nameField.endEditing(true)
         }
         
     }
