@@ -26,6 +26,7 @@ class ViewController: UIViewController {
                     nameList = nameList + word + "\n"
                 }
                 nameView.text = nameList
+                counter = counter - 1
             }
         }
     }
@@ -34,11 +35,6 @@ class ViewController: UIViewController {
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
             titleName.text = name[Int(randomPosition)]
-            /*let alertController = UIAlertController(title: "Random Name", message:
-                name[Int(randomPosition)], preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)*/
         }
         
         
