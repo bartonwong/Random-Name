@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,69 +15,91 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Random_Name" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-Ja-uz0">
-                                <rect key="frame" x="20" y="120" width="161" height="41"/>
+                            <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="line" placeholder="Name here" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-Ja-uz0">
+                                <rect key="frame" x="20" y="120" width="265" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Gml-Yo-OIw"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="woi-fP-pM7"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-HM-e0D">
-                                <rect key="frame" x="20" y="221" width="73" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-HM-e0D">
+                                <rect key="frame" x="20" y="231" width="120" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mlu-vW-1wv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-84-saG">
-                                <rect key="frame" x="20" y="15" width="280" height="79"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" misplaced="YES" text="Random Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-84-saG">
+                                <rect key="frame" x="20" y="15" width="374" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J63-Xt-uje">
-                                <rect key="frame" x="20" y="176" width="73" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J63-Xt-uje">
+                                <rect key="frame" x="20" y="178" width="120" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Remove"/>
                                 <connections>
                                     <action selector="removeName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tyj-GG-Vpn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-pD-fis">
-                                <rect key="frame" x="122" y="176" width="59" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-pD-fis">
+                                <rect key="frame" x="165" y="178" width="120" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DAh-OM-B3Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWb-pp-SKg">
-                                <rect key="frame" x="122" y="221" width="59" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAV-kh-aQA">
+                                <rect key="frame" x="293" y="120" width="101" height="596"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWb-pp-SKg">
+                                <rect key="frame" x="165" y="231" width="120" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Random"/>
                                 <connections>
                                     <action selector="random:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNm-Ot-qZw"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAV-kh-aQA">
-                                <rect key="frame" x="199" y="120" width="101" height="428"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BT8-84-saG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="300" id="0Is-JZ-hqH"/>
-                            <constraint firstItem="m9O-HM-e0D" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="7Xs-Px-S83"/>
-                            <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="Ud3-zC-6tm"/>
-                            <constraint firstItem="eAV-kh-aQA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="300" id="qG8-bj-FeF"/>
-                            <constraint firstItem="J63-Xt-uje" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="tac-8C-TfB"/>
+                            <constraint firstItem="m9O-HM-e0D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="7mc-np-UZT"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="6wb-Ja-uz0" secondAttribute="trailing" constant="18" id="9YS-U9-S7j"/>
+                            <constraint firstItem="J63-Xt-uje" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="9gJ-2S-EZ6"/>
+                            <constraint firstItem="BT8-84-saG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="CUY-WS-1EH"/>
+                            <constraint firstItem="BT8-84-saG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="DF7-HK-fR5"/>
+                            <constraint firstItem="J63-Xt-uje" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="IMS-GP-ha0"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="rWb-pp-SKg" secondAttribute="trailing" constant="18" id="JlC-bC-tjo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="eAV-kh-aQA" secondAttribute="bottom" constant="20" id="L0N-Pc-NYt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eAV-kh-aQA" secondAttribute="trailing" constant="20" id="PgT-3X-WJL"/>
+                            <constraint firstItem="m9O-HM-e0D" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="RV6-g3-pyf"/>
+                            <constraint firstItem="J63-Xt-uje" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="S8I-gD-nZv"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="top" secondItem="BT8-84-saG" secondAttribute="bottom" constant="26" id="Tri-kk-HLK"/>
+                            <constraint firstItem="m9O-HM-e0D" firstAttribute="top" secondItem="J63-Xt-uje" secondAttribute="bottom" constant="15" id="Vbg-Su-Zaq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BT8-84-saG" secondAttribute="trailing" constant="20" id="Ymo-LC-ak9"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="trailing" secondItem="BT8-84-saG" secondAttribute="trailing" id="YyN-QV-yaT"/>
+                            <constraint firstItem="0OT-pD-fis" firstAttribute="top" secondItem="6wb-Ja-uz0" secondAttribute="bottom" constant="15" id="bF9-y2-1GK"/>
+                            <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="fGM-S6-Gr2"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="trailing" secondItem="BT8-84-saG" secondAttribute="trailing" id="fwQ-5h-fqv"/>
+                            <constraint firstItem="m9O-HM-e0D" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="hHn-xD-4ka"/>
+                            <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iyM-zD-g9X"/>
+                            <constraint firstItem="rWb-pp-SKg" firstAttribute="top" secondItem="0OT-pD-fis" secondAttribute="bottom" constant="15" id="qdm-Lj-61h"/>
+                            <constraint firstItem="6wb-Ja-uz0" firstAttribute="top" secondItem="BT8-84-saG" secondAttribute="bottom" constant="26" id="qgO-7d-bk8"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="0OT-pD-fis" secondAttribute="trailing" constant="18" id="xeH-l5-TkD"/>
+                            <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="yKD-SO-CFJ"/>
+                            <constraint firstItem="J63-Xt-uje" firstAttribute="top" secondItem="6wb-Ja-uz0" secondAttribute="bottom" constant="15" id="yjL-No-ckW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -88,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101.25" y="116.19718309859155"/>
+            <point key="canvasLocation" x="-102" y="115"/>
         </scene>
     </scenes>
 </document>

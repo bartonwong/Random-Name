@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
     var nameList = ""
@@ -18,8 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     
     @IBAction func removeName(_ sender: UIButton) {
-        if (nameField.text != ""){
-            if let index = name.index(of: nameField.text!){
+        if let temp = nameField.text {
+            if let index = name.index(of: temp){
                 name.remove(at: index)
                 nameList = ""
                 for word in name {
@@ -36,11 +37,11 @@ class ViewController: UIViewController {
         if counter > 0 {
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
+            let random2 = arc4random_uniform(36)+1000
             titleName.text = name[Int(randomPosition)]
             nameField.endEditing(true)
+            AudioServicesPlayAlertSound(random2)
         }
-        
-        
     }
     
     @IBAction func reset(_ sender: UIButton) {
@@ -54,15 +55,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addName(_ sender: UIButton) {
-        if (nameField.text != ""){
-            nameList = nameList + nameField.text! + "\n"
-            name.append(nameField.text!)
+        if let temp = nameField.text {
+            nameList = nameList + temp + "\n"
+            name.append(temp)
             counter = counter + 1
             nameView.text = nameList
             nameField.text = ""
             nameField.endEditing(true)
         }
-        
     }
     
     override func viewDidLoad() {
