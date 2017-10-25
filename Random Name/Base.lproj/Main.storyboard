@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="line" placeholder="Name here" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-Ja-uz0">
+                            <textField opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="line" placeholder="Name here" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="15" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-Ja-uz0">
                                 <rect key="frame" x="20" y="120" width="265" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="Gml-Yo-OIw"/>
@@ -50,7 +50,7 @@
                                     <action selector="removeName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tyj-GG-Vpn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-pD-fis">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-pD-fis">
                                 <rect key="frame" x="165" y="178" width="120" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add"/>
@@ -61,10 +61,14 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAV-kh-aQA">
                                 <rect key="frame" x="293" y="120" width="101" height="596"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="101" id="CNr-v8-5KU"/>
+                                    <constraint firstAttribute="width" constant="100" id="YMO-87-JHT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWb-pp-SKg">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWb-pp-SKg">
                                 <rect key="frame" x="165" y="231" width="120" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Random"/>
@@ -81,6 +85,7 @@
                             <constraint firstItem="BT8-84-saG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="CUY-WS-1EH"/>
                             <constraint firstItem="BT8-84-saG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="DF7-HK-fR5"/>
                             <constraint firstItem="J63-Xt-uje" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="IMS-GP-ha0"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="6wb-Ja-uz0" secondAttribute="trailing" constant="8" id="Iv1-1u-TFq"/>
                             <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="rWb-pp-SKg" secondAttribute="trailing" constant="18" id="JlC-bC-tjo"/>
                             <constraint firstAttribute="bottomMargin" secondItem="eAV-kh-aQA" secondAttribute="bottom" constant="20" id="L0N-Pc-NYt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eAV-kh-aQA" secondAttribute="trailing" constant="20" id="PgT-3X-WJL"/>
@@ -94,9 +99,11 @@
                             <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="fGM-S6-Gr2"/>
                             <constraint firstItem="eAV-kh-aQA" firstAttribute="trailing" secondItem="BT8-84-saG" secondAttribute="trailing" id="fwQ-5h-fqv"/>
                             <constraint firstItem="m9O-HM-e0D" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="hHn-xD-4ka"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="rWb-pp-SKg" secondAttribute="trailing" constant="8" id="hpk-8M-MK4"/>
                             <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="iyM-zD-g9X"/>
                             <constraint firstItem="rWb-pp-SKg" firstAttribute="top" secondItem="0OT-pD-fis" secondAttribute="bottom" constant="15" id="qdm-Lj-61h"/>
                             <constraint firstItem="6wb-Ja-uz0" firstAttribute="top" secondItem="BT8-84-saG" secondAttribute="bottom" constant="26" id="qgO-7d-bk8"/>
+                            <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="0OT-pD-fis" secondAttribute="trailing" constant="8" id="tT1-2f-CUQ"/>
                             <constraint firstItem="eAV-kh-aQA" firstAttribute="leading" secondItem="0OT-pD-fis" secondAttribute="trailing" constant="18" id="xeH-l5-TkD"/>
                             <constraint firstItem="6wb-Ja-uz0" firstAttribute="leading" secondItem="BT8-84-saG" secondAttribute="leading" id="yKD-SO-CFJ"/>
                             <constraint firstItem="J63-Xt-uje" firstAttribute="top" secondItem="6wb-Ja-uz0" secondAttribute="bottom" constant="15" id="yjL-No-ckW"/>
