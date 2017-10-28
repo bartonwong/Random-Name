@@ -18,6 +18,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameView: UITextView!
     @IBOutlet weak var nameField: UITextField!
     
+    func addNameToField(){
+        if let temp = nameField.text {
+            nameList = nameList + temp + "\n"
+            name.append(temp)
+            counter = counter + 1
+            nameView.text = nameList
+            nameField.text = ""
+            
+        }
+    }
+    
+    @IBAction func primaryAction(_ sender: UITextField) {
+        addNameToField()
+    }
     @IBAction func removeName(_ sender: UIButton) {
         if let temp = nameField.text {
             if let index = name.index(of: temp){
@@ -35,6 +49,7 @@ class ViewController: UIViewController {
     }
     @IBAction func random(_ sender: UIButton) {
         if counter > 0 {
+            nameField.endEditing(true)
             let random = uint(counter)
             let randomPosition = arc4random_uniform(random)
             let random2 = arc4random_uniform(36)+1000
@@ -55,14 +70,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addName(_ sender: UIButton) {
-        if let temp = nameField.text {
-            nameList = nameList + temp + "\n"
-            name.append(temp)
-            counter = counter + 1
-            nameView.text = nameList
-            nameField.text = ""
-            nameField.endEditing(true)
-        }
+        addNameToField()
     }
     
     override func viewDidLoad() {
